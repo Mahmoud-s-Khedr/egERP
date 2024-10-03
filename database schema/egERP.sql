@@ -1,13 +1,10 @@
-create database erp;
-use erp;
-/** Tables */
-/*start with departments*/
+
+
 create table department(
                            id int primary key auto_increment,
                            name varchar(30),
                            description varchar(300)
-)
-/* admin */
+);
 create table admin(
                       id int primary key auto_increment,
                       username varchar(30),
@@ -15,11 +12,10 @@ create table admin(
                       authority varchar(30) default 'xxx',
                       department int,
                       foreign key (department) references department(id) on delete cascade
-)
+);
 
 create index admin_username on admin(username,password);
 
-/*most of the tables start with employee*/
 
 create table employee(
                          id int primary key auto_increment,
@@ -75,7 +71,7 @@ create table employee_leave(
                                end_date datetime,
                                status enum('pending','approved','rejected'),
                                foreign key (employee_id) references employee(id) on delete cascade
-)
+);
 --need to be discussed
 create index employee_leave_employee_id on employee_leave(employee_id,start_date,end_date);
 
@@ -96,9 +92,9 @@ create table user_login(
                            employee_id int primary key,
                            username varchar(30),
                            password varchar(30),
-                           foreign key (employee_id) references employee(id) on delete cascade
+                           foreign key (employee_id) references employee(id) on delete cascade,
                                foreign key (username) references employee(email) on delete cascade
-)
+);
 create index user_login_employee_id on user_login(username,password);
 
 /*continue departments*/
