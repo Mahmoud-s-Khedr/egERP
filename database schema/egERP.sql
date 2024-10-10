@@ -439,7 +439,7 @@ create table product_order_shipment(
                                        estimated_end_date datetime default current_timestamp,
                                        actual_end_date datetime default current_timestamp,
                                        foreign key (product_order_id) references product_order(id) on delete cascade
-)
+);
 create index product_order_shipment_date on product_order_shipment(start_date,estimated_end_date,actual_end_date);
 
 create table service_order(
