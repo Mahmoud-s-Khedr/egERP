@@ -2914,11 +2914,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/heiba/basic/erp2/egERP/Crm/Crm.csproj",
+      "projectUniqueName": "/media/heiba/E04245E64245C1D0/egERP/Crm/Crm.csproj",
       "projectName": "Crm",
-      "projectPath": "/media/heiba/basic/erp2/egERP/Crm/Crm.csproj",
+      "projectPath": "/media/heiba/E04245E64245C1D0/egERP/Crm/Crm.csproj",
       "packagesPath": "/home/heiba/.nuget/packages/",
-      "outputPath": "/media/heiba/basic/erp2/egERP/Crm/obj/",
+      "outputPath": "/media/heiba/E04245E64245C1D0/egERP/Crm/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/heiba/.nuget/NuGet/NuGet.Config"
@@ -2991,7 +2991,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

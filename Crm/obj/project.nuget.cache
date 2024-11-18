@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rw2BB2YDsCSJykO9nKRx4Iro53fRDP5hZj8G44kjx/DkrtDsF/IjB+KTwOQ3emS/1BbxZm6BKl4Vh6vT5lJUqA==",
+  "dgSpecHash": "Hme2Qyv+rLu5TXmzzr9+jQEEh8v5FH8oR0iCHYjAofaM5GdhFSJfLJZ1YIIHqWAx28MjKCAkFVslTEIynamB+g==",
   "success": true,
-  "projectFilePath": "/media/heiba/basic/erp2/egERP/Crm/Crm.csproj",
+  "projectFilePath": "/media/heiba/E04245E64245C1D0/egERP/Crm/Crm.csproj",
   "expectedPackageFiles": [
     "/home/heiba/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/heiba/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.10/microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",
