@@ -1,5 +1,5 @@
 preview about project and team 
-log in
+log in (mahmoud khedr) 1 day
 sidebar (mohamed) 1 day
 navbar   (mohamed) 1 day
 
@@ -13,6 +13,16 @@ crm
   product by id update 
   order add search 
   order by id update invoice 
+
+HCM 
+  apis check 
+  dashboard
+  add employee
+  remove employee
+  edit employee data ex{address,salary,etc...}
+  grant authority to employee
+  search for an employee
+  
 
   
   
