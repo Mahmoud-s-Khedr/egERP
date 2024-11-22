@@ -16,7 +16,6 @@ CREATE TABLE Employees (
     JobTitle VARCHAR(100),
     HireDate DATE,
     Salary DECIMAL(10, 2),
-    IsActive BOOLEAN DEFAULT TRUE,
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
 CREATE INDEX EmployeeIndexUsingName ON Employees (FirstName, LastName);
@@ -221,6 +220,7 @@ CREATE TABLE EmployeeTraining (
   EmployeeTrainingID INT AUTO_INCREMENT PRIMARY KEY,
   EmployeeID INT NOT NULL,
   ProgramID INT NOT NULL,
+  StartDate DATE NOT NULL,
   CompletionDate DATE,
   CompletionStatus ENUM('Completed', 'In Progress', 'Not Started') DEFAULT 'Not Started',
   FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
@@ -267,16 +267,25 @@ CREATE INDEX EmployeeResignationIndex ON EmployeeResignations (EmployeeID, Resig
 --  Warehouses Table
 CREATE TABLE Warehouses (
     WarehouseID INT AUTO_INCREMENT PRIMARY KEY,
-    WarehouseName VARCHAR(100) NOT NULL
+    WarehouseName VARCHAR(100) NOT NULL,
+    IsActive BOOLEAN DEFAULT TRUE
 );
-CREATE INDEX WarehouseIndex ON Warehouses (WarehouseName);
+CREATE INDEX WarehouseIndex ON Warehouses (IsActive,WarehouseName);
+
+-- warehouse Managers Table
+CREATE TABLE WarehouseManagers (
+    WarehouseManagerID INT AUTO_INCREMENT PRIMARY KEY,
+    WarehouseID INT NOT NULL,
+    EmployeeID INT NOT NULL,
+    FOREIGN KEY (WarehouseID) REFERENCES Warehouses(WarehouseID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
+
 --  WarehouseLocations Table
 CREATE TABLE WarehouseLocations (
     LocationID INT AUTO_INCREMENT PRIMARY KEY,
     WarehouseID INT NOT NULL,
     LocationName VARCHAR(100) NOT NULL,
-    AddressID INT,
-    EmployeeID INT NOT NULL,
     AddressLine1 VARCHAR(100) NOT NULL,
     AddressLine2 VARCHAR(100),
     City VARCHAR(50) NOT NULL,
@@ -296,7 +305,7 @@ CREATE INDEX ProductCategoryIndex ON ProductCategories (CategoryName);
 CREATE TABLE Products (
     ProductID INT AUTO_INCREMENT PRIMARY KEY,
     ProductName VARCHAR(100) NOT NULL,
-    SKU VARCHAR(50) UNIQUE NOT NULL,
+    ProductModel VARCHAR(50) UNIQUE NOT NULL,
     UnitPrice DECIMAL(10, 2),
     QuantityInStock INT DEFAULT 0,
     CategoryID INT,
@@ -313,21 +322,7 @@ CREATE TABLE ProductWarehouses (
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
     FOREIGN KEY (WarehouseID) REFERENCES Warehouses(WarehouseID)
 );
--- batch support need to be explained
-CREATE TABLE Batches (
-    BatchID INT AUTO_INCREMENT PRIMARY KEY,
-    ProductID INT NOT NULL,
-    BatchNumber VARCHAR(50) UNIQUE NOT NULL,
-    ExpiryDate DATE,
-    ProductionDate DATE,
-    Quantity INT NOT NULL,
-    Price DECIMAL(10, 2),
-    WarehouseID INT NOT NULL,
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
-    FOREIGN KEY (WarehouseID) REFERENCES Warehouses(WarehouseID)
-);
-CREATE INDEX BatchIndex ON Batches (ProductID);
-CREATE INDEX BatchWarehouseIndex ON Batches (WarehouseID);
+
 --  InventoryTransactions Table
 CREATE TABLE InventoryTransactions (
     TransactionID INT AUTO_INCREMENT PRIMARY KEY,
@@ -352,7 +347,7 @@ CREATE TABLE CustomerAddresses (
     AddressLine1 VARCHAR(255) NOT NULL,
     AddressLine2 VARCHAR(255),
     City VARCHAR(100) NOT NULL,
-    State VARCHAR(50) NOT NULL,
+    Province VARCHAR(50) NOT NULL,
     PostalCode VARCHAR(20) NOT NULL,
     Country VARCHAR(100) NOT NULL,
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
@@ -504,3 +499,21 @@ CREATE TABLE CustomerInteractions (
 );
 CREATE INDEX InteractionIndex ON CustomerInteractions (InteractionType);
 CREATE INDEX InteractionCustomerIndex ON CustomerInteractions (CustomerID);
+
+-- batch support 
+CREATE TABLE Batches (
+    BatchID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductID INT NOT NULL,
+    BatchNumber VARCHAR(50) UNIQUE NOT NULL,
+    ExpiryDate DATE,
+    ProductionDate DATE,
+    Quantity INT NOT NULL,
+    Price DECIMAL(10, 2),
+    WarehouseID INT NOT NULL,
+    SupplierID INT NOT NULL,
+    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    FOREIGN KEY (WarehouseID) REFERENCES Warehouses(WarehouseID)
+);
+CREATE INDEX BatchIndex ON Batches (ProductID);
+CREATE INDEX BatchWarehouseIndex ON Batches (WarehouseID);
