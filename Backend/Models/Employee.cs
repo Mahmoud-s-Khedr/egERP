@@ -8,6 +8,4 @@ public class Employee
     public string JobTitle { get; set; }
     public DateTime? HireDate { get; set; } // Nullable because it can be NULL
     public decimal? Salary { get; set; } // Nullable because it can be NULL
-    public bool IsActive { get; set; } = true; // Default value TRUE for IsActive
-
 }

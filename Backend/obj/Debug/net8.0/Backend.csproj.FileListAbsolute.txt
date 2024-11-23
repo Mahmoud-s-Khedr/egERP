@@ -32,3 +32,14 @@
 /home/mk/erpSystem/egERP/Backend/obj/Debug/net8.0/Backend.pdb
 /home/mk/erpSystem/egERP/Backend/obj/Debug/net8.0/Backend.genruntimeconfig.cache
 /home/mk/erpSystem/egERP/Backend/obj/Debug/net8.0/ref/Backend.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/MySqlConnector.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll

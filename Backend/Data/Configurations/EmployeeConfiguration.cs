@@ -45,10 +45,5 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
                .HasColumnName("Salary")
                .HasColumnType("DECIMAL(10, 2)"); // Decimal with 2 precision
 
-        // Map the IsActive property to the "IsActive" column
-        builder.Property(e => e.IsActive)
-               .HasColumnName("IsActive")
-               .HasDefaultValue(true); // Default value TRUE for IsActive
-
     }
 }
