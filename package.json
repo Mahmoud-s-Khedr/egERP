@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "recharts": "^2.13.3"
+  }
+}

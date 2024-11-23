@@ -1,6 +1,9 @@
 import './App.css'
 import {  createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AppLayOut from './Pages/AppLayOut'
+import AppLayOut from './LayOuts/AppLayOut'
+import DashBoard from './Pages/DashBoard';
+import Customers from './Pages/Customers';
+import CustomerProfile from './Pages/CustomerProfile';
 function App() {
   const router = createBrowserRouter([
     {
@@ -21,7 +24,7 @@ function App() {
         },
         {
           path:"dashboard",
-          element:<div>dashboard</div>
+          element:<DashBoard/>
         },
         {
           path:"employees",
@@ -34,11 +37,11 @@ function App() {
         },
         {
           path:"customers",
-          element:<div>customers</div>
+          element:<Customers/>
         },
         {
           path:"customers/:id",
-          element: <div> customers by id</div>
+          element:<CustomerProfile/> 
         },
         {
           path:"products",

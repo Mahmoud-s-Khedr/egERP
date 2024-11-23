@@ -1,1 +1,48 @@
+$primary: #1da1f2;
+$secondary: #ff8a65;
+$success: #37b24d;
+$danger: #f5365c;
+$warning: #fb6340;
+$info: #6610f2;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$enable-shadows: true;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+  "light": $light,
+  "dark": $dark,
+);
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./colors";
+$background-color-light: map-get($map: $gray, $key:3);
+$text-color-light:map-get($map: $dark, $key:9 );
+$background-color-dark: map-get($map: $dark, $key:6);
+$text-color-dark:$white;
+@import "./components/sidebar";
+@import "./components/navbar";
+@import "./components/dashboard";
+@import "./components/pagecontent";
+@import "./components/mainbarcharts";
+@import "./components/card";
+@import "./components/table";
+@import "./components/piechart";
+@import "./components/customersearchform";
+@import "./components/addcutomerform";
+@import "./components/pagination";
+@import "./components/profilecard";
+
+
+
+
+

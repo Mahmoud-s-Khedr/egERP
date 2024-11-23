@@ -1,0 +1,16 @@
+.page-content{
+    min-height: calc(100vh - 60px);
+    ;
+}
+
+dark-mode{
+    background-color: map-get($map: $dark, $key: 8 );
+    color: $text-color-dark;
+}
+
+@media (max-width: 768px) {
+    .page-content{
+        width: 100vw;
+    }
+    
+}
