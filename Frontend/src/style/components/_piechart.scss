@@ -1,0 +1,15 @@
+
+.dark-mode{
+    .pie-chart{
+        background-color: map-get($map: $dark, $key: 6 );
+        color: $text-color-dark;
+    }
+}
+.pie-chart-height {
+    min-height: 360px;
+}
+@media (max-width: 768px) {
+    .pie-chart-height {
+      min-height: 400px;
+    }
+}

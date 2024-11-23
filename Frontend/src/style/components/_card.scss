@@ -1,0 +1,60 @@
+.customer-card {
+  padding: 10px;
+  height: 170px;
+  width: 100%;
+  margin-left: 10px;
+  background-color: map-get($map: $gray, $key:3 );
+  transition: transform 0.2s ease-in-out;
+}
+.card{
+    background-color: map-get($map: $gray, $key: 3);
+}
+.customer-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  background-color: rgba(13, 110, 253, 0.1);
+  transition: all 0.3s ease;
+}
+
+.customer-card:hover .icon-wrapper {
+  background-color: rgba(13, 110, 253, 0.2);
+}
+
+.counter {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Add animation for numbers */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter {
+  animation: countUp 0.5s ease-out;
+}
+
+.dark-mode{
+    .customer-card{
+        background-color: map-get($map: $dark, $key: 6 );
+        color: $text-color-dark;
+    }
+}
+
+@media (max-width: 768px) {
+    .customer-card {
+      margin-left: 0;
+      margin-top: 1rem;
+      height: 100px;
+    }
+    
+}

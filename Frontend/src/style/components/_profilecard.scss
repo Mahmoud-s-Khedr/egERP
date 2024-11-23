@@ -1,0 +1,31 @@
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    .profile-card {
+      width: 100%; // Full width by default
+      margin: 1rem;
+
+    }
+  
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+  }
+
+
+
+  @media (max-width: 768px) {
+    .profile-card-container {
+        .profile-photo{
+            width:200px;
+            height: 200px;
+        }
+    }
+    
+  }
