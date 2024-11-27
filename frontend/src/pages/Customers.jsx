@@ -46,9 +46,9 @@ function Customers() {
               <FilterFrom/>
             </FilterWrapper>
             <TableWrapper>
-                
                 <CustomerTable/>
             </TableWrapper>
+            
             
         </PageWrapper>
     )

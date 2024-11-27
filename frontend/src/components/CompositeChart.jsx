@@ -53,7 +53,7 @@ const CompositeChart = () => {
         {/* Orders Bar */}
         <Bar dataKey="orders" barSize={20} fill={theme.secondary} name="Orders" />
         {/* Customers Line */}
-        <Line type="monotone" dataKey="customers" stroke={theme.tertiary} name="Customers" />
+        <Line type="monotone" dataKey="customers" stroke={theme.red} name="Customers" />
       </ComposedChart>
     </ResponsiveContainer>
   );

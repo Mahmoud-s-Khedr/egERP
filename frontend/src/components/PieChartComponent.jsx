@@ -1,5 +1,6 @@
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { useTheme } from '../context/Theme';
+import { BiColor } from 'react-icons/bi';
 // Sample customer data with country field
 const customers = [
   { name: 'John Doe', country: 'USA' },
@@ -44,6 +45,12 @@ export default function PieChartComponent() {
   };
 
     const {theme} = useTheme();
+    const color = [
+      theme.primary,
+      theme.secondary,
+      theme.red,
+      theme.yellow
+    ]
     return (
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width="100%" height="100%">
@@ -59,7 +66,7 @@ export default function PieChartComponent() {
             label={renderCustomizedLabel} // Custom label to show the number of customers per country
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={theme.primary} />
+              <Cell key={`cell-${index}`} fill={Math.random() > 0.5 ? color[index % color.length] : color[index % color.length]} />
             ))}
           </Pie>
           <Tooltip />

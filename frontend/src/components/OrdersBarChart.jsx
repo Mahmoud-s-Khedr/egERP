@@ -33,29 +33,11 @@ const TriangleBar = ({ fill, x, y, width, height }) => (
 const OrdersBarChart = () => {
   const { isDarkMode,theme } = useTheme();
 
-  const lightColors = [
-    theme.primary,
-    theme.secondary,
-    theme.primary,
-    theme.secondary,
-    theme.primary,
-    theme.secondary,
-    theme.primary,
-    theme.secondary,
-  ]
-
-  const darkColors = [
-    theme.primary,
-    theme.secondary,
-    
-    theme.primary,
-    theme.secondary,
-    theme.primary,
-    theme.secondary,
-    theme.primary,
-    theme.secondary,
-  ]
-  const colors = isDarkMode ? darkColors : lightColors;
+  
+  const colors = [
+    theme.primary
+  
+  ];
 
   const handleBarClick = (data) => {
     alert(`Month: ${data.name}, Orders: ${data.orders}`);
