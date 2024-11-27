@@ -5,6 +5,6 @@ public class AccountTransaction
     public int AccountID { get; set; }
     public DateTime TransactionDate { get; set; }
     public decimal Amount { get; set; }
-    public string AccountTransactionDescription { get; set; }
+    public string? AccountTransactionDescription { get; set; }
 
 }

@@ -5,6 +5,6 @@ public class EmployeePerformance
     public int EmployeeID { get; set; }
     public DateTime ReviewDate { get; set; }
     public int PerformanceRating { get; set; }
-    public string PerformanceComments { get; set; }
+    public string? PerformanceComments { get; set; }
     public int SupervisorID { get; set; }
 }

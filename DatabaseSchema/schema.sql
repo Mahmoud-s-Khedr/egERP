@@ -21,6 +21,7 @@ CREATE TABLE Employees (
 CREATE INDEX EmployeeIndexUsingName ON Employees (FirstName, LastName);
 create INDEX EmployeeIndexUsingJobTitle ON Employees (JobTitle);
 CREATE INDEX EmployeeIndexUsingDepartment ON Employees (DepartmentID);
+
 --  Roles Table
 CREATE TABLE Roles (
     RoleID INT AUTO_INCREMENT PRIMARY KEY,
@@ -46,7 +47,9 @@ CREATE TABLE Users (
     EmployeeID INT,
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
+
 CREATE INDEX EmailIndex ON Users (Email);
+CREATE INDEX EmployeeIndex ON Users (EmployeeID);
 --  RolePermissions Table
 CREATE TABLE RolePermissions (
     RolePermissionID INT AUTO_INCREMENT PRIMARY KEY,
@@ -339,6 +342,7 @@ CREATE TABLE Customers (
     CustomerID INT AUTO_INCREMENT PRIMARY KEY,
     CustomerName VARCHAR(100) NOT NULL
 );
+
 CREATE INDEX CustomerIndex ON Customers (CustomerName);
 --  CustomerAddresses Table
 CREATE TABLE CustomerAddresses (

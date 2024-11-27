@@ -10,10 +10,9 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         // Map the table name to "Accounts"
         builder.ToTable("Accounts");
 
-        // Map the AccountID property to the "AccountID" column
-        builder.Property(a => a.AccountID)
-               .HasColumnName("AccountID")
-               .ValueGeneratedOnAdd(); // Auto-incremented (Identity column)
+       // Map the AccountID property to the "AccountID" column
+       builder.Property(a => a.AccountID)
+              .HasColumnName("AccountID");
 
         // Map the AccountName property to the "AccountName" column
         builder.Property(a => a.AccountName)

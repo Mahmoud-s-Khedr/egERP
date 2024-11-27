@@ -45,11 +45,9 @@ public class OpportunityConfiguration : IEntityTypeConfiguration<Opportunity>
                .HasColumnName("OpportunityDescription")
                .HasColumnType("TEXT"); // Set the column type for text
 
-        // Map the OpportunityStatus property to the "OpportunityStatus" column
-        builder.Property(o => o.OpportunityStatus)
-               .HasColumnName("OpportunityStatus")
-               .HasMaxLength(20) // Max length of the ENUM values
-               .HasDefaultValue("Open"); // Default value for OpportunityStatus
+              // Map the OpportunityStatus property to the "OpportunityStatus" column
+              builder.Property(o => o.OpportunityStatus)
+                     .HasColumnName("OpportunityStatus");
 
     }
 }

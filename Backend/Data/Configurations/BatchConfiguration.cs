@@ -10,10 +10,9 @@ public class BatchConfiguration : IEntityTypeConfiguration<Batch>
         // Map the table name to "Batches"
         builder.ToTable("Batches");
 
-        // Map the BatchID property to the "BatchID" column
-        builder.Property(b => b.BatchID)
-               .HasColumnName("BatchID") // Column name in the table
-               .ValueGeneratedOnAdd(); // Auto-incremented (Identity column)
+              // Map the BatchID property to the "BatchID" column
+              builder.Property(b => b.BatchID)
+                     .HasColumnName("BatchID"); // Column name in the table
 
         // Map the ProductID property to the "ProductID" column
         builder.Property(b => b.ProductID)

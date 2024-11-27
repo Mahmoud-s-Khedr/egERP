@@ -27,8 +27,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 
         // Map the OrderStatus property to the "OrderStatus" column
         builder.Property(o => o.OrderStatus)
-               .HasColumnName("OrderStatus")
-               .HasDefaultValue("Pending"); // Default value is "Pending"
+               .HasColumnName("OrderStatus");
 
         // Map the TotalAmount property to the "TotalAmount" column
         builder.Property(o => o.TotalAmount)
