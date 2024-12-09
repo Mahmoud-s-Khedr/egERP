@@ -1,6 +1,7 @@
 import DashboardCard from "../components/DashBoardCard";
 import OrdersBarChart from "../components/OrdersBarChart";
 import styled from "styled-components";
+import { useTheme } from "../context/Theme";
 import { FaDollarSign, FaUsers } from "react-icons/fa";
 import { CgShoppingCart } from "react-icons/cg";
 import { GiCash } from "react-icons/gi";
@@ -125,6 +126,8 @@ const PieChartWrapper=styled.div`
     }    
 `;
 function DashBoard() {
+    const {theme} = useTheme();
+    console.log(theme);
     return (
         <DashBoardWrapper>
             <RoWrapper>
@@ -132,12 +135,12 @@ function DashBoard() {
                 <OrdersBarChart/>
             </BarChartWrapper>
             <CardsWrapper>
-                <DashboardCard title="Customers" value="100" description="" icon={<FaUsers />}/>
-                <DashboardCard title="Revenue" value="$1000" description="" icon={<FaDollarSign />}/>
+                <DashboardCard title="Customers" value="100" color={theme.primary} icon={<FaUsers />}/>
+                <DashboardCard title="Revenue" value="$1000" color={theme.yellow} icon={<FaDollarSign />}/>
             </CardsWrapper>
             <CardsWrapper>
-                <DashboardCard title="Orders" value="100" description="" icon={<CgShoppingCart />}/>
-                <DashboardCard title="Sales" value="$1000" description="" icon={<GiCash />}/>
+                <DashboardCard title="Orders" value="100" color={theme.red} icon={<CgShoppingCart />}/>
+                <DashboardCard title="Sales" value="$1000" color={theme.secondary} icon={<GiCash />}/>
             </CardsWrapper>
             </RoWrapper>
             <RoWrapper>

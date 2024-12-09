@@ -38,18 +38,18 @@ const Icon=styled.div`
     align-items: center;
     font-size: 50px;
     height: 100%;
-    color: ${({theme})=>theme.primary};
+    color: ${(prop)=>prop.color};
 `;
 
 const Description=styled.div`
     width: 70%;
     font-size: 15px;
-    color: ${({theme})=>theme.secondary};
+    color: ${(prop)=>prop.color};
 `;
 const Value=styled.div`
     width: 70%;
     font-size: 25px;
-    color: ${({theme})=>theme.primary};
+    color: ${(prop)=>prop.color};
 `;
 const RightSide=styled.div`
     display: flex;
@@ -60,15 +60,15 @@ const RightSide=styled.div`
     width: 70%;
 
 `;
-function  DashboardCard({title, value, description, icon}) {
+function  DashboardCard({title, value, color, icon}) {
     return (
         <Card>
             <RightSide>
             <CardHeader>{title}</CardHeader>
-            <Value>{value}</Value>
-            <Description>+12% from last month</Description>
+            <Value color={color}> {value}</Value>
+            <Description ><span style={{color:color}}>+12%</span> from last month</Description>
             </RightSide>
-            <Icon>{icon}</Icon>
+            <Icon color={color}>{icon}</Icon>
             
         </Card>
     )
