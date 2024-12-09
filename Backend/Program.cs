@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Backend.Data;
-
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddCors();
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -21,7 +21,7 @@ builder.Services.AddAuthentication(x =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))}; 
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))}; 
 });
 
 builder.Services.AddAuthorization();
@@ -46,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

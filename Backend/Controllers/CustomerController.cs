@@ -1,8 +1,6 @@
 using Backend.Data;
 using Microsoft.AspNetCore.Mvc;
-using Backend.Functions;
 using Backend.Models;
-using Microsoft.EntityFrameworkCore;
 namespace Backend.Controllers;
 
 [Route("api/[controller]")]
@@ -22,12 +20,12 @@ public class CustomerController : ControllerBase
 
     }
     [HttpGet("getCustomerAllDataByID")]
-    public async Task<ActionResult<Tuple<Customer, List<CustomerAddress>, List<CustomerContact>>>> getCustomer(int id)
+    public async Task<ActionResult<Tuple<Customer, CustomerAddress, CustomerContact>>> getCustomer(int id)
     {
         var Customer = _context.Customers.Where(x => x.CustomerID == id).First();
-        var CustomerAddress = _context.CustomerAddresses.Where(x => x.CustomerID == id).ToList();
-        var CustomerContact = _context.CustomerContacts.Where(x => x.CustomerID == id).ToList();
-        return new Tuple<Customer, List<CustomerAddress>, List<CustomerContact>>(Customer, CustomerAddress, CustomerContact);
+        var CustomerAddress = _context.CustomerAddresses.Where(x => x.CustomerID == id).First();
+        var CustomerContact = _context.CustomerContacts.Where(x => x.CustomerID == id).First();
+        return new Tuple<Customer, CustomerAddress, CustomerContact>(Customer, CustomerAddress, CustomerContact);
     }
     [HttpGet("getCustomerByID")]
     public async Task<ActionResult<Customer>> getCustomerByID(int id){
