@@ -36,11 +36,7 @@ public class EmployeeDepartmentTransferConfiguration : IEntityTypeConfiguration<
 
         // Map the EmployeeDepartmentTransferStatus property to the "EmployeeDepartmentTransferStatus" column
         builder.Property(edt => edt.TransferStatus)
-               .HasColumnName("EmployeeDepartmentTransferStatus")
-               .HasConversion(
-                    v => v.ToString(),
-                    v => (EmployeeDepartmentTransferStatus)Enum.Parse(typeof(EmployeeDepartmentTransferStatus), v))
-               .HasDefaultValue(EmployeeDepartmentTransferStatus.Pending); // Default value is 'Pending'
+               .HasColumnName("EmployeeDepartmentTransferStatus"); // Default value is 'Pending'
 
         // Map the OldDepartmentID property to the "OldDepartmentID" column
         builder.Property(edt => edt.OldDepartmentID)

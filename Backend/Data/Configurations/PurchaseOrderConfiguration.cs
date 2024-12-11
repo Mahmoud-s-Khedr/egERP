@@ -35,8 +35,6 @@ public class PurchaseOrderConfiguration : IEntityTypeConfiguration<PurchaseOrder
         // Map the PurchaseOrderStatus property to the "PurchaseOrderStatus" column
         builder.Property(po => po.PurchaseOrderStatus)
                .HasColumnName("PurchaseOrderStatus")
-               .HasMaxLength(50)
-               .HasDefaultValue("Pending")
                .IsRequired(); // PurchaseOrderStatus is required (NOT NULL)
     }
 }

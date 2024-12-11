@@ -5,7 +5,7 @@ public class CustomerInteraction
     public int CustomerID { get; set; }
     public DateTime InteractionDate { get; set; }
     public InteractionType InteractionType { get; set; }
-    public string Notes { get; set; }
+    public string? Notes { get; set; }
 
 }
 public enum InteractionType{

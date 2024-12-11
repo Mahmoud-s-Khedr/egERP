@@ -43,3 +43,11 @@
 /home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/MySqlConnector.dll
 /home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/mk/erpSystem/egERP/Backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

@@ -6,7 +6,7 @@ public class EmployeeContract
     public DateTime ContractStartDate { get; set; }
     public DateTime ContractEndDate { get; set; }
     public ContractType ContractType { get; set; }
-    public string ContractDescription { get; set; }
+    public string? ContractDescription { get; set; }
     public EmployeeContractStatus ContractStatus { get; set; }
 }
 

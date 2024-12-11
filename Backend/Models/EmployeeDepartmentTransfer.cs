@@ -5,15 +5,8 @@ public class EmployeeDepartmentTransfer
     public int EmployeeID { get; set; }
     public DateTime TransferDate { get; set; }
     public int NewDepartmentID { get; set; }
-    public string Reason { get; set; }
-    public EmployeeDepartmentTransferStatus TransferStatus { get; set; }
+    public string? Reason { get; set; }
+    public string? TransferStatus { get; set; }
     public int? OldDepartmentID { get; set; }
 
-}
-
-public enum EmployeeDepartmentTransferStatus
-{
-    Pending=1,
-    Approved,
-    Rejected
 }

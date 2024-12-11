@@ -10,10 +10,9 @@ public class AccountTransactionConfiguration : IEntityTypeConfiguration<AccountT
         // Map the table name to "AccountTransactions"
         builder.ToTable("AccountTransactions");
 
-        // Map the TransactionID property to the "TransactionID" column
-        builder.Property(at => at.TransactionID)
-               .HasColumnName("TransactionID")
-               .ValueGeneratedOnAdd(); // Auto-incremented (Identity column)
+              // Map the TransactionID property to the "TransactionID" column
+              builder.Property(at => at.TransactionID)
+                     .HasColumnName("TransactionID");
 
         // Map the AccountID property to the "AccountID" column
         builder.Property(at => at.AccountID)
