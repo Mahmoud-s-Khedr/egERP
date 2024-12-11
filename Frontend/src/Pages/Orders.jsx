@@ -6,7 +6,7 @@ function Orders() {
     return (
         <>
             <Filter/>
-            <Table width={"100%"}/>
+            <Table width={"calc(100% - 24px)"}/>
             
         </>
     )

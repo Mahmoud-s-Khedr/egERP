@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import useTheme from '../Context/useTheme';
+import { useNavigate } from 'react-router-dom';
 
 const TableContainer = styled.div`
   background-color: ${({ theme }) => theme.ComponentBackground};  
@@ -131,6 +132,7 @@ const data = [
 
 function Table({width}) {
   const {theme} = useTheme();
+  const navigate = useNavigate();
 
   return (
     <TableContainer theme={theme} width={width}>
@@ -153,7 +155,7 @@ function Table({width}) {
                 <Td theme={theme}>{row.customer}</Td>
                 <Td theme={theme}>{row.date}</Td>
                 <Td theme={theme}>{row.status}</Td>
-                <Td theme={theme}>{<Button theme={theme}>View Details</Button>}</Td>
+                <Td theme={theme}>{<Button theme={theme} onClick={() => navigate(`${row.id}`)}>View Details</Button>}</Td>
               </Tr>
             ))}
           </tbody>

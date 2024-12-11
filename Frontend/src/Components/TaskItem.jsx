@@ -52,7 +52,9 @@ function TaskItem({selectedTask, color, setSelectedTask}) {
             data-list-color={color}
         >
             <TaskItemHeader ref={headerRef} color={color}>Task Header</TaskItemHeader>
-            <TaskItemBody theme={theme}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic corporis iste totam. Adipisci sit libero amet praesentium </TaskItemBody>
+            <TaskItemBody theme={theme}>Lorem ipsum dolor sit amet 
+                consectetur adipisicing elit. Hic corporis iste totam. Adipisci 
+                sit libero amet praesentium </TaskItemBody>
         </TaskItemContainer>
     )
 }

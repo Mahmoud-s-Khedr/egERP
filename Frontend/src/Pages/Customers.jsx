@@ -6,7 +6,7 @@ function Customers() {
     return (
         <>
             <Filter/>
-            <CustomersTable/>
+            <CustomersTable width={"calc(100% - 24px)"}/>
         </>
     )
 }

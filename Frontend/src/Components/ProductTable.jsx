@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import useTheme from '../Context/useTheme';
+import { useNavigate } from 'react-router-dom';
 
 const TableContainer = styled.div`
   background-color: ${({ theme }) => theme.ComponentBackground};  
@@ -136,6 +137,7 @@ const mockData = [
 
 function ProductTable({ width = "100%" }) {
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <TableContainer theme={theme} width={width}>
@@ -164,7 +166,7 @@ function ProductTable({ width = "100%" }) {
                 <Td theme={theme}>{product.stock}</Td>
                 <Td theme={theme}>{product.orders}</Td>
                 <Td theme={theme}>
-                  <Button theme={theme} color={theme.primary}>View Details</Button>
+                  <Button theme={theme} color={theme.primary} onClick={() => navigate(`${product.id}`)}>View Details</Button>
                   <Button theme={theme} color={theme.secondary}>Add Order</Button>
                 </Td>
               </Tr>

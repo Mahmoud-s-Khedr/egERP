@@ -5,7 +5,7 @@ function Products() {
     return (
         <>
             <Filter/>
-            <ProductTable/>
+            <ProductTable width={"calc(100% - 24px)"}/>
         </>
     )
 }

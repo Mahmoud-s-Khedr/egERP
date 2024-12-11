@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import useTheme from '../Context/useTheme';
+import { useNavigate } from 'react-router-dom';
 
 const TableContainer = styled.div`
   background-color: ${({ theme }) => theme.ComponentBackground};  
@@ -76,10 +77,11 @@ const Tr = styled.tr`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.div`
   background-color: ${({ theme }) => theme.primary};
   color: white;
   border: none;
+  width: fit-content;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -131,6 +133,7 @@ const mockData = [
 
 function CustomersTable({ width = "100%" }) {
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <TableContainer theme={theme} width={width}>
@@ -159,7 +162,7 @@ function CustomersTable({ width = "100%" }) {
                 <Td theme={theme}>{customer.orders}</Td>
                 <Td theme={theme}>{customer.spent}</Td>
                 <Td theme={theme}>
-                  <Button theme={theme}>View Profile</Button>
+                  <Button theme={theme} onClick={() => navigate(`${customer.id}`)}>View Profile</Button>
                 </Td>
               </Tr>
             ))}
