@@ -1,0 +1,6 @@
+@egerp.Application_HostAddress = http://localhost:5182
+
+GET {{egerp.Application_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
