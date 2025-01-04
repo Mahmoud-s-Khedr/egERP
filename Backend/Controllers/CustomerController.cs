@@ -122,5 +122,11 @@ public class CustomerController : ControllerBase
         await _context.SaveChangesAsync();
         return customerContact; 
     }
+
+    [HttpGet("return1")]
+
+    public async Task<ActionResult<int>> return1(){
+        return 1;
+    }
     
 }
