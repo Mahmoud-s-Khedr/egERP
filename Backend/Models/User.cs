@@ -7,5 +7,4 @@ public class User
     public bool IsActive { get; set; } = true; // Default value TRUE for IsActive
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Default value for CreatedAt
     public int? EmployeeID { get; set; } // Nullable because it can be NULL
-
 }

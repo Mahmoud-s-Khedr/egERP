@@ -30,7 +30,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
+        builder.Configuration.GetConnectionString("MySQL"),
         new MySqlServerVersion(new Version(8, 0, 32))
     )
 );
