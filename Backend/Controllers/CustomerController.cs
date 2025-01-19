@@ -14,9 +14,14 @@ public class CustomerController : ControllerBase
         _context = context;
     }
     [HttpGet("getAllCustomers")]
-    public async Task<ActionResult<List<Customer>>> getAllCustomers(int page, int pageSize)
+    public ActionResult<List<Customer>> getAllCustomers(int page, int pageSize)
     {
-        return _context.Customers.OrderBy(x => x.CustomerID).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+        var list = _context.Customers?.OrderBy(x => x.CustomerID).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+        if(list == null)
+            return NotFound("there are no customers");
+
+        return list;
 
     }
     [HttpGet("getCustomerAllDataByID")]
